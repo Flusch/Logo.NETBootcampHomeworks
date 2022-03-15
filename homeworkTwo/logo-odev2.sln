@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev2", "logo-odev2\logo-odev2.csproj", "{EA4DEA64-FDBB-4DF2-907F-83E02F4FE975}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev2", "logo-odev2\logo-odev2.csproj", "{573472CB-B14B-4045-B876-3CE0778C324C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA4DEA64-FDBB-4DF2-907F-83E02F4FE975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA4DEA64-FDBB-4DF2-907F-83E02F4FE975}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA4DEA64-FDBB-4DF2-907F-83E02F4FE975}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA4DEA64-FDBB-4DF2-907F-83E02F4FE975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{573472CB-B14B-4045-B876-3CE0778C324C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{573472CB-B14B-4045-B876-3CE0778C324C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{573472CB-B14B-4045-B876-3CE0778C324C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{573472CB-B14B-4045-B876-3CE0778C324C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
