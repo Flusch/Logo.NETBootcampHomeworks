@@ -23,7 +23,7 @@ namespace logo_odev2.Middlewares
             try
             {
                 Version versionHeader = new Version(httpContext.Request.Headers["app-version"]);
-                Version versionSettings = new Version(_config.GetValue<string>("AppVersion"));
+                Version versionSettings = new Version(_config.GetValue<string>("AppSettings:AppVersion"));
                 string path = httpContext.Request.Path;
                 if (path.Equals("/api/Home/login") || path.Equals("/api/Home/register"))
                 {
@@ -32,21 +32,20 @@ namespace logo_odev2.Middlewares
                 else if (versionHeader.CompareTo(versionSettings) > 0)
                 {
                     httpContext.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                    await _next(httpContext);
-                }
-                else
-                {
-                    httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    await httpContext.Response.WriteAsync("Beklenmeyen bir hata oluştu.");
+                    await httpContext.Response.WriteAsync("Versiyon Hatası!");
                     return;
                 }
             }
             catch (Exception ex)
             {
-                httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                await httpContext.Response.WriteAsync(ex.Message);
-                return;
+                await HandleExceptionAsync(httpContext, ex);
             }
+        }
+
+        private async Task HandleExceptionAsync(HttpContext httpContext, Exception ex)
+        {
+            httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            await httpContext.Response.WriteAsync($"Bilinmeyen bir hata oluştu: {ex.Message}");
         }
     }
 

@@ -10,27 +10,27 @@ namespace logo_odev2.Controllers
         [Route("login")]
         public IActionResult Login()
         {
-            return Ok();
+            return Ok("Login tamamlandı.");
         }
 
         [HttpPost]
         [Route("register")]
         public IActionResult Register()
         {
-            return Ok();
+            return Ok("Register tamamlandı.");
         }
 
         [HttpGet]
         [Route("movie")]
         public IActionResult GetMovie()
         {
-            return Ok();
+            return Ok("Movie tamamlandı.");
         }
         [HttpGet]
         [Route("flower")]
         public IActionResult GetFlower()
         {
-            return Ok();
+            return Ok("Flower tamamlandı.");
         }
 
     }

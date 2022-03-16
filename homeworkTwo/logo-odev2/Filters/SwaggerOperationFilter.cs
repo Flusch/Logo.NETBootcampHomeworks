@@ -17,7 +17,7 @@ namespace logo_odev2.Filters
             {
                 Name = "app-version",
                 In = ParameterLocation.Header,
-                Required = true,
+                Required = false,
                 Schema = new OpenApiSchema
                 {
                     Type = "string",
