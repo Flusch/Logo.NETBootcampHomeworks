@@ -28,7 +28,7 @@ namespace logo_odev2.Controllers
         }
         [HttpGet]
         [Route("flower")]
-        [ApiExplorerSettings(IgnoreApi = true]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IActionResult GetFlower()
         {
             return Ok("Flower tamamlandı.");
