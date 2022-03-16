@@ -1,3 +1,4 @@
+using logo_odev2.Filters;
 using logo_odev2.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +26,8 @@ namespace logo_odev2API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "logo_odev2", Version = "v1" });
+
+                c.OperationFilter<SwaggerOperationFilter>();
             });
         }
 

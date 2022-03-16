@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using System;
 
 namespace logo_odev2.Controllers
 {
@@ -8,14 +6,32 @@ namespace logo_odev2.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-
         [HttpPost]
-        public IActionResult Index([FromHeader] Version version)
+        [Route("login")]
+        public IActionResult Login()
         {
-            Version ver = new Version();
-            ver.CompareTo(version);
             return Ok();
         }
-        
+
+        [HttpPost]
+        [Route("register")]
+        public IActionResult Register()
+        {
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("movie")]
+        public IActionResult GetMovie()
+        {
+            return Ok();
+        }
+        [HttpGet]
+        [Route("flower")]
+        public IActionResult GetFlower()
+        {
+            return Ok();
+        }
+
     }
 }
