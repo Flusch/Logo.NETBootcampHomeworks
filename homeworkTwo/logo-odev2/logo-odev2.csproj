@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>logo_odev2API</RootNamespace>
+    <RootNamespace>logo_odev2</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
