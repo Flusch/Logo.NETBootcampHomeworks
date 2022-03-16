@@ -35,6 +35,10 @@ namespace logo_odev2.Middlewares
                     await httpContext.Response.WriteAsync("Versiyon Hatası!");
                     return;
                 }
+                else
+                {
+                    await _next(httpContext);
+                }
             }
             catch (Exception ex)
             {
