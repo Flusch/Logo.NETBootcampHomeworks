@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "logo-odev4", "logo-odev4\logo-odev4.csproj", "{C8EBF029-DBBC-4569-B33D-827BE0348518}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev4.Domain", "logo-odev4.Domain\logo-odev4.Domain.csproj", "{1C8A37A6-C01E-4B9B-98C2-EA4550D14FAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev4.Business", "logo-odev4.Business\logo-odev4.Business.csproj", "{CA819848-D8CF-4E3C-BF8B-B20274E315C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev4.DataAccess.EntityFramework", "logo-odev4.DataAccess.EntityFramework\logo-odev4.DataAccess.EntityFramework.csproj", "{99DF2C42-EBF8-4369-91A3-612E2F1B265D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev4.DataAccess.EntityFramework.Repository", "logo-odev4.DataAccess.EntityFramework.Repository\logo-odev4.DataAccess.EntityFramework.Repository.csproj", "{C2ECD0C8-3CD6-47E6-8545-0E4784B65B92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8EBF029-DBBC-4569-B33D-827BE0348518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8EBF029-DBBC-4569-B33D-827BE0348518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8EBF029-DBBC-4569-B33D-827BE0348518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8EBF029-DBBC-4569-B33D-827BE0348518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C8A37A6-C01E-4B9B-98C2-EA4550D14FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C8A37A6-C01E-4B9B-98C2-EA4550D14FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C8A37A6-C01E-4B9B-98C2-EA4550D14FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C8A37A6-C01E-4B9B-98C2-EA4550D14FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA819848-D8CF-4E3C-BF8B-B20274E315C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA819848-D8CF-4E3C-BF8B-B20274E315C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA819848-D8CF-4E3C-BF8B-B20274E315C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA819848-D8CF-4E3C-BF8B-B20274E315C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99DF2C42-EBF8-4369-91A3-612E2F1B265D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99DF2C42-EBF8-4369-91A3-612E2F1B265D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99DF2C42-EBF8-4369-91A3-612E2F1B265D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99DF2C42-EBF8-4369-91A3-612E2F1B265D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2ECD0C8-3CD6-47E6-8545-0E4784B65B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2ECD0C8-3CD6-47E6-8545-0E4784B65B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2ECD0C8-3CD6-47E6-8545-0E4784B65B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2ECD0C8-3CD6-47E6-8545-0E4784B65B92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0DE05CC-4F44-4A9A-8CCA-3B44EB171D09}
+	EndGlobalSection
+EndGlobal
