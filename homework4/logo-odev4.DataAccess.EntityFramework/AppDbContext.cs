@@ -11,12 +11,12 @@ namespace logo_odev4.DataAccess.EntityFramework
 
         }
         public DbSet<Company> Companies { get; set; }
-        //public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+            //modelBuilder.ApplyConfiguration(new CompanyConfiguration());
             //modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
 

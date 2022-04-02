@@ -5,6 +5,7 @@ using logo_odev4.Business.Abstracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using logo_odev4.Filters;
+using Microsoft.AspNetCore.Http;
 
 namespace logo_odev4.Controllers
 {
@@ -27,11 +28,7 @@ namespace logo_odev4.Controllers
             return NoContent();
         }
 
-        /// <summary>
-        /// Tüm şirket bilgilerini getirir.
-        /// </summary>
-        /// <returns></returns>
-        [Route("Companies")]
+        [Route("GetAllCompanies")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -48,11 +45,31 @@ namespace logo_odev4.Controllers
             return Ok(new CompanyResponse { Data = companies, Success = true });
         }
 
-        /// <summary>
-        /// Şirket ekleme işlemi yapar
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        [Route("GetCompanyById/{id}")]
+        [HttpGet]
+        public IActionResult Get(int id)
+        {
+            var company = companyService.GetCompanyById(x => x.Id == id);
+            if (company == null)
+            {
+                return NotFound(new CompanyResponse { Success = false, Error = "Company not found" });
+            }
+            return Ok(new CompanyResponse
+            {
+                Data = new CompanyDto
+                {
+                    Name = company.Name,
+                    Address = company.Address,
+                    City = company.City,
+                    Country = company.Country,
+                    Description = company.Description,
+                    Location = company.Location,
+                    Phone = company.Phone
+                },
+                Success = true
+            });
+        }
+
         [Route("AddCompany")]
         [HttpPost]
         public IActionResult Add([FromBody] CompanyDto model)
@@ -78,77 +95,21 @@ namespace logo_odev4.Controllers
                 });
         }
 
-        /// <summary>
-        /// Şirket güncelleme işlemi yapar
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [Route("UpdateCompany")]
+        [Route("UpdateCompanyById/{id}")]
         [HttpPost]
-        public IActionResult Update([FromBody] CompanyDto model)
+        public IActionResult Update([FromBody] CompanyDto model, int id)
         {
-            companyService.UpdateCompany(new Company
-            {
-                Name = model.Name,
-                Address = model.Address,
-                City = model.City,
-                Country = model.Country,
-                Location = model.Location,
-                Phone = model.Phone,
-                Description = model.Description,
-                CreatedBy = "Yavuz Selim",
-                //CreatedAt = System.DateTime.Now,
-                LastUpdatedBy = "Yavuz Selim",
-                LastUpdatedAt = System.DateTime.Now,
-                IsDeleted = false
-            });
-            return Ok(
-                new CompanyResponse
-                {
-                    Data = "İşleminiz Başarıyla Tamamlandı",
-                    Success = true
-                });
-        }
-        /*
-        /// <summary>
-        /// Şirket silme işlemi yapar
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [Route("DeleteCompany")]
-        [HttpPost]
-        public IActionResult Delete([FromBody] CompanyDto model)
-        {
-            companyService.DeleteCompany(new Company
-            {
-                Name = model.Name,
-                Address = model.Address,
-                City = model.City,
-                Country = model.Country,
-                Location = model.Location,
-                Phone = model.Phone,
-                Description = model.Description,
-                LastUpdatedBy = "Yavuz Selim",
-                LastUpdatedAt = System.DateTime.Now,
-            });
-            return Ok(
-                new CompanyResponse
-                {
-                    Data = "İşleminiz Başarıyla Tamamlandı",
-                    Success = true
-                });
-        }*/
-
-        [Route("DeleteCompany")]
-        [HttpPost]
-        public IActionResult Delete([FromQuery] int id)
-        {
-            companyService.DeleteCompany(new Company
+            companyService.UpdateCompanyById(new Company
             {
                 Id = id,
-                IsDeleted = true,
-                LastUpdatedBy = "Yavuz Selim",
-                LastUpdatedAt = System.DateTime.Now,
+                Name = model.Name,
+                Address = model.Address,
+                City = model.City,
+                Country = model.Country,
+                Location = model.Location,
+                Phone = model.Phone,
+                Description = model.Description,
+                LastUpdatedBy = "Yavuz Selim"
             });
             return Ok(
                 new CompanyResponse
@@ -157,7 +118,22 @@ namespace logo_odev4.Controllers
                     Success = true
                 });
         }
-
-
+        
+        [Route("DeleteCompanyById/{id}")]
+        [HttpPost]
+        public IActionResult DeleteById(int id)
+        {
+            companyService.DeleteCompanyById(new Company
+            {
+                Id = id,
+                LastUpdatedBy = "Yavuz Selim"
+            });
+            return Ok(
+                new CompanyResponse
+                {
+                    Data = "İşleminiz Başarıyla Tamamlandı",
+                    Success = true
+                });
+        }
     }
 }
