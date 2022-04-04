@@ -14,7 +14,7 @@ namespace logo_odev5.JsonGetterWorker
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddHostedService<Worker>();
+                    services.AddHostedService<PostWorker>();
                 });
     }
 }

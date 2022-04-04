@@ -9,7 +9,7 @@ using logo_odev5.DataAccess.EntityFramework;
 namespace logo_odev5.DataAccess.EntityFramework.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220404133031_AddPostsTable")]
+    [Migration("20220404161110_AddPostsTable")]
     partial class AddPostsTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

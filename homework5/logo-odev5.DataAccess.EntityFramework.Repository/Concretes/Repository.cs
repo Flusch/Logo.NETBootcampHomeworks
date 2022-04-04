@@ -1,6 +1,5 @@
 ﻿using logo_odev5.Domain.Entities;
 using logo_odev5.DataAccess.EntityFramework.Repository.Abstracts;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
@@ -21,6 +20,10 @@ namespace logo_odev5.DataAccess.EntityFramework.Repository.Concretes
         public T GetById(Expression<Func<T, bool>> filter)
         {
             return unitOfWork.Context.Set<T>().SingleOrDefault(filter);
+        }
+        public void Add(T entity)
+        {
+            unitOfWork.Context.Set<T>().Add(entity);
         }
     }
 }

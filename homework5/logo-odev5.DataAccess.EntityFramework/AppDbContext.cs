@@ -11,6 +11,7 @@ namespace logo_odev5.DataAccess.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new PostConfiguration());
         }
     }
 }

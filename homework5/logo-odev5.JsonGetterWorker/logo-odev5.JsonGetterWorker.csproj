@@ -9,4 +9,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\logo-odev5.Business\logo-odev5.Business.csproj" />
+    <ProjectReference Include="..\logo-odev5.Domain\logo-odev5.Domain.csproj" />
+  </ItemGroup>
 </Project>
