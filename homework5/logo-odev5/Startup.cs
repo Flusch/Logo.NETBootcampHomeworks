@@ -1,10 +1,8 @@
-using logo_odev4.Business.Abstracts;
-using logo_odev4.Business.Concretes;
-using logo_odev4.DataAccess.EntityFramework;
-using logo_odev4.DataAccess.EntityFramework.Repository.Abstracts;
-using logo_odev4.DataAccess.EntityFramework.Repository.Concretes;
-using logo_odev4.Filters;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using logo_odev5.Business.Abstracts;
+using logo_odev5.Business.Concretes;
+using logo_odev5.DataAccess.EntityFramework;
+using logo_odev5.DataAccess.EntityFramework.Repository.Abstracts;
+using logo_odev5.DataAccess.EntityFramework.Repository.Concretes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -31,28 +29,7 @@ namespace logo_odev5
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(o =>
-            {
-                var Key = Encoding.UTF8.GetBytes(Configuration["JWT:Key"]);
-                o.SaveToken = true;
-                o.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration["JWT:Issuer"],
-                    ValidAudience = Configuration["JWT:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Key),
-                };
-            });
 
-            services.AddSingleton<IJwtService, JwtService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "First.API", Version = "v1" });
@@ -89,12 +66,7 @@ namespace logo_odev5
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient<ICompanyService, CompanyService>();
-
-            services.AddControllers(config =>
-            {
-                config.Filters.Add(new LogAttribute());
-            });
+            services.AddTransient<IPostService, PostService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

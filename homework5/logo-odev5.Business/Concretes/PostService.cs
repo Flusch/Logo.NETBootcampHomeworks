@@ -8,38 +8,21 @@ using System.Linq.Expressions;
 
 namespace logo_odev5.Business.Concretes
 {
-    public class CompanyService : ICompanyService
+    public class PostService : IPostService
     {
-        private readonly IRepository<Company> repository;
-        private readonly IUnitOfWork unitOfWork;
-        public CompanyService(IRepository<Company> repository, IUnitOfWork unitOfWork)
+        private readonly IRepository<Post> repository;
+        public PostService(IRepository<Post> repository)
         {
             this.repository = repository;
-            this.unitOfWork = unitOfWork;
         }
 
-        public List<Company> GetAllCompany()
+        public List<Post> GetAllPosts()
         {
             return repository.Get().ToList();
         }
-        public Company GetCompanyById(Expression<Func<Company, bool>> filter)
+        public Post GetPostById(Expression<Func<Post, bool>> filter)
         {
             return repository.GetById(filter);
-        }
-        public void AddCompany(Company company)
-        {
-            repository.Add(company);
-            unitOfWork.Commit();
-        }
-        public void UpdateCompanyById(Company company)
-        {
-            repository.Update(company);
-            unitOfWork.Commit();
-        }
-        public void DeleteCompanyById(Company company)
-        {
-            repository.Delete(company);
-            unitOfWork.Commit();
         }
     }
 }

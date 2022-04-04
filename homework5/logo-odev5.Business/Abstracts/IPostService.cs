@@ -5,12 +5,9 @@ using System.Linq.Expressions;
 
 namespace logo_odev5.Business.Abstracts
 {
-    public interface ICompanyService
+    public interface IPostService
     {
-        Company GetCompanyById(Expression<Func<Company, bool>> filter);
-        List<Company> GetAllCompany();
-        void AddCompany(Company company);
-        void UpdateCompanyById(Company company);
-        void DeleteCompanyById(Company company);
+        Post GetPostById(Expression<Func<Post, bool>> filter);
+        List<Post> GetAllPosts();
     }
 }

@@ -5,4 +5,12 @@
     <RootNamespace>logo_odev5.DataAccess.EntityFramework.Repository</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\logo-odev5.DataAccess.EntityFramework\logo-odev5.DataAccess.EntityFramework.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,13 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace logo_odev5.DataAccess.EntityFramework.Configurations
 {
-    internal class UserConfiguration
+    internal class PostConfiguration : IEntityTypeConfiguration<Post>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Post> builder)
         {
-            builder.ToTable("Users").HasKey(x => x.Id);
-            builder.Property(x => x.Username).IsRequired();
-            builder.Property(x => x.Password).IsRequired();
+            builder.ToTable("Posts");
         }
     }
 }

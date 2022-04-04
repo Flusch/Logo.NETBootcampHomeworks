@@ -9,8 +9,5 @@ namespace logo_odev5.DataAccess.EntityFramework.Repository.Abstracts
     {
         IQueryable<T> Get();
         public T GetById(Expression<Func<T, bool>> filter);
-        void Add(T entity);
-        void Update(T entity);
-        void Delete(T entity);
     }
 }

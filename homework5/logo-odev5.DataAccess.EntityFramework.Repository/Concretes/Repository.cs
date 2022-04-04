@@ -16,37 +16,11 @@ namespace logo_odev5.DataAccess.EntityFramework.Repository.Concretes
         }
         public IQueryable<T> Get()
         {
-            return unitOfWork.Context.Set<T>().Where(x => !x.IsDeleted).AsQueryable();
+            return unitOfWork.Context.Set<T>().AsQueryable();
         }
         public T GetById(Expression<Func<T, bool>> filter)
         {
-            return unitOfWork.Context.Set<T>().Where(x => !x.IsDeleted).SingleOrDefault(filter);
-        }
-        public void Add(T entity)
-        {
-            unitOfWork.Context.Set<T>().Add(entity);
-        }
-        public void Update(T entity)
-        {
-            var exist = GetById(x => x.Id == entity.Id);
-            if (exist != null)
-            {
-
-                exist.LastUpdatedBy = entity.LastUpdatedBy;
-                exist.LastUpdatedAt = DateTime.Now;
-                unitOfWork.Context.Entry(exist).State = EntityState.Modified;
-            }
-        }
-        public void Delete(T entity)
-        {
-            T exist = unitOfWork.Context.Set<T>().Find(entity.Id);
-            if (exist != null)
-            {
-                exist.IsDeleted = true;
-                exist.LastUpdatedBy = entity.LastUpdatedBy;
-                exist.LastUpdatedAt = DateTime.Now;
-                unitOfWork.Context.Entry(exist).State = EntityState.Modified;
-            }
+            return unitOfWork.Context.Set<T>().SingleOrDefault(filter);
         }
     }
 }

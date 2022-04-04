@@ -37,14 +37,14 @@ namespace logo_odev5.JsonGetterWorker
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                var request = await httpClient.GetAsync("https://www.patika.dev/");
+                var request = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts");
                 if (request.IsSuccessStatusCode)
                 {
-                    _logger.LogInformation("Patika.dev site is up Status Code {StatusCode}", request.StatusCode);
+                    _logger.LogInformation("Json Place Holder Data {0}", request.Content.ReadAsStringAsync().Result);
                 }
                 else
                 {
-                    _logger.LogError("Patika.dev site is down Status Code {StatusCode}", request.StatusCode);
+                    _logger.LogError("Error Status Code ", request.StatusCode);
                 }
 
                 await Task.Delay(10000, stoppingToken);

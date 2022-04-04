@@ -1,135 +1,56 @@
 ﻿using logo_odev5.Models;
-using logo_odev5.Domain.Entities;
 using logo_odev5.Business.Abstracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using logo_odev5.DTOs;
 
 namespace logo_odev5.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompanyController : ControllerBase
+    public class PostController : ControllerBase
     {
-        private readonly ICompanyService companyService;
+        private readonly IPostService postService;
 
-        public CompanyController(ICompanyService companyService)
+        public PostController(IPostService postService)
         {
-            this.companyService = companyService;
+            this.postService = postService;
         }
 
-        [HttpGet]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public IActionResult Log()
-        {
-            return NoContent();
-        }
-
-        [Route("GetAllCompanies")]
+        [Route("GetAllPosts")]
         [HttpGet]
         public IActionResult Get()
         {
-            var companies = companyService.GetAllCompany().Select(x => new CompanyDto
+            var posts = postService.GetAllPosts().Select(x => new PostDto
             {
-                Name = x.Name,
-                Address = x.Address,
-                City = x.City,
-                Country = x.Country,
-                Description = x.Description,
-                Location = x.Location,
-                Phone = x.Phone
+                Id = x.Id,
+                UserId = x.UserId,
+                Title = x.Title,
+                Body = x.Body
             });
-            return Ok(new CompanyResponse { Data = companies, Success = true });
+            return Ok(new PostResponse { Data = posts, Success = true });
         }
 
-        [Route("GetCompanyById/{id}")]
+        [Route("GetPostById/{id}")]
         [HttpGet]
         public IActionResult Get(int id)
         {
-            var company = companyService.GetCompanyById(x => x.Id == id);
-            if (company == null)
+            var post = postService.GetPostById(x => x.Id == id);
+            if (post == null)
             {
-                return NotFound(new CompanyResponse { Success = false, Error = "Company not found" });
+                return NotFound(new PostResponse { Success = false, Error = "Post not found" });
             }
-            return Ok(new CompanyResponse
+            return Ok(new PostResponse
             {
-                Data = new CompanyDto
+                Data = new PostDto
                 {
-                    Name = company.Name,
-                    Address = company.Address,
-                    City = company.City,
-                    Country = company.Country,
-                    Description = company.Description,
-                    Location = company.Location,
-                    Phone = company.Phone
+                    Id = post.Id,
+                    UserId = post.UserId,
+                    Title = post.Title,
+                    Body = post.Body
                 },
                 Success = true
             });
-        }
-
-        [Route("AddCompany")]
-        [HttpPost]
-        public IActionResult Add([FromBody] CompanyDto model)
-        {
-            companyService.AddCompany(new Company
-            {
-                Name = model.Name,
-                Address = model.Address,
-                City = model.City,
-                Country = model.Country,
-                Location = model.Location,
-                Phone = model.Phone,
-                Description = model.Description,
-                CreatedBy = "Yavuz Selim",
-                CreatedAt = System.DateTime.Now,
-                IsDeleted = false
-            });
-            return Ok(
-                new CompanyResponse
-                {
-                    Data = "İşleminiz Başarıyla Tamamlandı",
-                    Success = true
-                });
-        }
-
-        [Route("UpdateCompanyById/{id}")]
-        [HttpPost]
-        public IActionResult Update([FromBody] CompanyDto model, int id)
-        {
-            companyService.UpdateCompanyById(new Company
-            {
-                Id = id,
-                Name = model.Name,
-                Address = model.Address,
-                City = model.City,
-                Country = model.Country,
-                Location = model.Location,
-                Phone = model.Phone,
-                Description = model.Description,
-                LastUpdatedBy = "Yavuz Selim"
-            });
-            return Ok(
-                new CompanyResponse
-                {
-                    Data = "İşleminiz Başarıyla Tamamlandı",
-                    Success = true
-                });
-        }
-
-        [Route("DeleteCompanyById/{id}")]
-        [HttpPost]
-        public IActionResult DeleteById(int id)
-        {
-            companyService.DeleteCompanyById(new Company
-            {
-                Id = id,
-                LastUpdatedBy = "Yavuz Selim"
-            });
-            return Ok(
-                new CompanyResponse
-                {
-                    Data = "İşleminiz Başarıyla Tamamlandı",
-                    Success = true
-                });
         }
     }
 }

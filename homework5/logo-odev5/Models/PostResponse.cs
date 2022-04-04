@@ -1,6 +1,6 @@
 ﻿namespace logo_odev5.Models
 {
-    public class CompanyResponse
+    public class PostResponse
     {
         public object Data { get; set; }
         public bool Success { get; set; }
