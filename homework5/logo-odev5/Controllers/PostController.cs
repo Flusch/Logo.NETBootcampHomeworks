@@ -1,12 +1,10 @@
-﻿using logo_odev4.Models;
-using logo_odev4.Business.DTOs;
-using logo_odev4.Domain.Entities;
-using logo_odev4.Business.Abstracts;
+﻿using logo_odev5.Models;
+using logo_odev5.Domain.Entities;
+using logo_odev5.Business.Abstracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using logo_odev4.Filters;
 
-namespace logo_odev4.Controllers
+namespace logo_odev5.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -20,7 +18,6 @@ namespace logo_odev4.Controllers
         }
 
         [HttpGet]
-        [Log]
         [ApiExplorerSettings(IgnoreApi = true)]
         public IActionResult Log()
         {
@@ -117,7 +114,7 @@ namespace logo_odev4.Controllers
                     Success = true
                 });
         }
-        
+
         [Route("DeleteCompanyById/{id}")]
         [HttpPost]
         public IActionResult DeleteById(int id)

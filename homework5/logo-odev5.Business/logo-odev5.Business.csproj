@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>logo_odev5.Business</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\logo-odev5.DataAccess.EntityFramework.Repository\logo-odev5.DataAccess.EntityFramework.Repository.csproj" />
+    <ProjectReference Include="..\logo-odev5.Domain\logo-odev5.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "logo_odev5.JsonGetterWorker": {
+      "commandName": "Project",
+      "dotnetRunMessages": "true",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

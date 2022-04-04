@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev5", "logo-odev5\logo-odev5.csproj", "{E6C117CB-BA9B-4EC4-93BD-A5F0CD436FBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "logo-odev5", "logo-odev5\logo-odev5.csproj", "{E6C117CB-BA9B-4EC4-93BD-A5F0CD436FBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev5.DataAccess.EntityFramework", "logo-odev5.DataAccess.EntityFramework\logo-odev5.DataAccess.EntityFramework.csproj", "{1E84B6BE-3032-4524-AD44-0D2B55C2086B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev5.DataAccess.EntityFramework.Repository", "logo-odev5.DataAccess.EntityFramework.Repository\logo-odev5.DataAccess.EntityFramework.Repository.csproj", "{94097DC3-431D-41FE-875B-D45F860AFFBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev5.Domain", "logo-odev5.Domain\logo-odev5.Domain.csproj", "{B49806D1-144E-4392-B5F8-604662316CDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev5.JsonGetterWorker", "logo-odev5.JsonGetterWorker\logo-odev5.JsonGetterWorker.csproj", "{75FBE352-0F2B-4B70-9A5D-CDFB0A458C6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logo-odev5.Business", "logo-odev5.Business\logo-odev5.Business.csproj", "{EFF6F93B-4ED1-4135-95E4-2EC9F75F1354}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{E6C117CB-BA9B-4EC4-93BD-A5F0CD436FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6C117CB-BA9B-4EC4-93BD-A5F0CD436FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6C117CB-BA9B-4EC4-93BD-A5F0CD436FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E84B6BE-3032-4524-AD44-0D2B55C2086B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E84B6BE-3032-4524-AD44-0D2B55C2086B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E84B6BE-3032-4524-AD44-0D2B55C2086B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E84B6BE-3032-4524-AD44-0D2B55C2086B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94097DC3-431D-41FE-875B-D45F860AFFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94097DC3-431D-41FE-875B-D45F860AFFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94097DC3-431D-41FE-875B-D45F860AFFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94097DC3-431D-41FE-875B-D45F860AFFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B49806D1-144E-4392-B5F8-604662316CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49806D1-144E-4392-B5F8-604662316CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49806D1-144E-4392-B5F8-604662316CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49806D1-144E-4392-B5F8-604662316CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FBE352-0F2B-4B70-9A5D-CDFB0A458C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FBE352-0F2B-4B70-9A5D-CDFB0A458C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FBE352-0F2B-4B70-9A5D-CDFB0A458C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FBE352-0F2B-4B70-9A5D-CDFB0A458C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF6F93B-4ED1-4135-95E4-2EC9F75F1354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF6F93B-4ED1-4135-95E4-2EC9F75F1354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF6F93B-4ED1-4135-95E4-2EC9F75F1354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF6F93B-4ED1-4135-95E4-2EC9F75F1354}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
