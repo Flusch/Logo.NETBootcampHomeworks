@@ -1,5 +1,0 @@
-# HomeworkSix
-
-## Checklist ✅
-
-* 
